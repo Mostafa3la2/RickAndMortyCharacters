@@ -24,6 +24,8 @@
 		0DEB9E832C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9E812C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift */; };
 		0DEB9E842C37587B00C3A629 /* CharacterStatusCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB9E822C37587B00C3A629 /* CharacterStatusCollectionViewCell.xib */; };
 		0DEB9E862C375A1200C3A629 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9E852C375A1200C3A629 /* UICollectionView+Extensions.swift */; };
+		0DEB9E882C375CBA00C3A629 /* StatusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9E872C375CBA00C3A629 /* StatusHeaderView.swift */; };
+		0DEB9E8A2C375CC500C3A629 /* StatusHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB9E892C375CC500C3A629 /* StatusHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		0DEB9E812C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatusCollectionViewCell.swift; sourceTree = "<group>"; };
 		0DEB9E822C37587B00C3A629 /* CharacterStatusCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterStatusCollectionViewCell.xib; sourceTree = "<group>"; };
 		0DEB9E852C375A1200C3A629 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		0DEB9E872C375CBA00C3A629 /* StatusHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHeaderView.swift; sourceTree = "<group>"; };
+		0DEB9E892C375CC500C3A629 /* StatusHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,8 @@
 				0D80CE282C3747B600E2E523 /* CharactersListViewController.swift */,
 				0D80CE292C3747B600E2E523 /* CharactersListViewController.xib */,
 				0DEB9E7F2C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift */,
+				0DEB9E872C375CBA00C3A629 /* StatusHeaderView.swift */,
+				0DEB9E892C375CC500C3A629 /* StatusHeaderView.xib */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D80CDFB2C3741F900E2E523 /* Preview Assets.xcassets in Resources */,
+				0DEB9E8A2C375CC500C3A629 /* StatusHeaderView.xib in Resources */,
 				0D80CE2B2C3747B600E2E523 /* CharactersListViewController.xib in Resources */,
 				0D80CDF82C3741F900E2E523 /* Assets.xcassets in Resources */,
 				0D80CE332C3748B100E2E523 /* CharacterTableViewCell.xib in Resources */,
@@ -413,6 +420,7 @@
 				0D80CDF62C3741F800E2E523 /* ContentView.swift in Sources */,
 				0D80CDF42C3741F800E2E523 /* RickAndMortyCharactersApp.swift in Sources */,
 				0D80CE362C374A5700E2E523 /* UIView+Extensions.swift in Sources */,
+				0DEB9E882C375CBA00C3A629 /* StatusHeaderView.swift in Sources */,
 				0D80CE382C374BC900E2E523 /* UITableView+Extensions.swift in Sources */,
 				0D80CE2A2C3747B600E2E523 /* CharactersListViewController.swift in Sources */,
 				0DEB9E862C375A1200C3A629 /* UICollectionView+Extensions.swift in Sources */,
