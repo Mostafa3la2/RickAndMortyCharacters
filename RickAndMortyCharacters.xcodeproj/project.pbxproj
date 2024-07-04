@@ -14,6 +14,13 @@
 		0D80CE052C3741FA00E2E523 /* RickAndMortyCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CE042C3741FA00E2E523 /* RickAndMortyCharactersTests.swift */; };
 		0D80CE0F2C3741FA00E2E523 /* RickAndMortyCharactersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CE0E2C3741FA00E2E523 /* RickAndMortyCharactersUITests.swift */; };
 		0D80CE112C3741FA00E2E523 /* RickAndMortyCharactersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CE102C3741FA00E2E523 /* RickAndMortyCharactersUITestsLaunchTests.swift */; };
+		0D80CE2A2C3747B600E2E523 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CE282C3747B600E2E523 /* CharactersListViewController.swift */; };
+		0D80CE2B2C3747B600E2E523 /* CharactersListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D80CE292C3747B600E2E523 /* CharactersListViewController.xib */; };
+		0D80CE322C3748B100E2E523 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CE302C3748B100E2E523 /* CharacterTableViewCell.swift */; };
+		0D80CE332C3748B100E2E523 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D80CE312C3748B100E2E523 /* CharacterTableViewCell.xib */; };
+		0D80CE362C374A5700E2E523 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CE352C374A5700E2E523 /* UIView+Extensions.swift */; };
+		0D80CE382C374BC900E2E523 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CE372C374BC900E2E523 /* UITableView+Extensions.swift */; };
+		0DEB9E802C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9E7F2C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		0D80CE0A2C3741FA00E2E523 /* RickAndMortyCharactersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyCharactersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D80CE0E2C3741FA00E2E523 /* RickAndMortyCharactersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyCharactersUITests.swift; sourceTree = "<group>"; };
 		0D80CE102C3741FA00E2E523 /* RickAndMortyCharactersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyCharactersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0D80CE282C3747B600E2E523 /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
+		0D80CE292C3747B600E2E523 /* CharactersListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersListViewController.xib; sourceTree = "<group>"; };
+		0D80CE302C3748B100E2E523 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		0D80CE312C3748B100E2E523 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
+		0D80CE352C374A5700E2E523 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		0D80CE372C374BC900E2E523 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		0DEB9E7F2C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersNavigationControllerRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +113,7 @@
 				0D80CE1E2C37445C00E2E523 /* Domain */,
 				0D80CE202C37446800E2E523 /* Data */,
 				0D80CE222C3744C900E2E523 /* Utilities */,
+				0D80CE342C374A0E00E2E523 /* Supporting Files */,
 				0D80CE212C3744A000E2E523 /* Resources */,
 				0D80CDF52C3741F800E2E523 /* ContentView.swift */,
 				0D80CDF92C3741F900E2E523 /* Preview Content */,
@@ -183,6 +198,7 @@
 		0D80CE232C3744FA00E2E523 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D80CE2E2C37486F00E2E523 /* List */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +229,43 @@
 			children = (
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		0D80CE2C2C37484C00E2E523 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				0D80CE302C3748B100E2E523 /* CharacterTableViewCell.swift */,
+				0D80CE312C3748B100E2E523 /* CharacterTableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		0D80CE2D2C37485600E2E523 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		0D80CE2E2C37486F00E2E523 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				0D80CE2D2C37485600E2E523 /* CollectionViewCells */,
+				0D80CE2C2C37484C00E2E523 /* TableViewCells */,
+				0D80CE282C3747B600E2E523 /* CharactersListViewController.swift */,
+				0D80CE292C3747B600E2E523 /* CharactersListViewController.xib */,
+				0DEB9E7F2C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		0D80CE342C374A0E00E2E523 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D80CE352C374A5700E2E523 /* UIView+Extensions.swift */,
+				0D80CE372C374BC900E2E523 /* UITableView+Extensions.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,7 +373,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D80CDFB2C3741F900E2E523 /* Preview Assets.xcassets in Resources */,
+				0D80CE2B2C3747B600E2E523 /* CharactersListViewController.xib in Resources */,
 				0D80CDF82C3741F900E2E523 /* Assets.xcassets in Resources */,
+				0D80CE332C3748B100E2E523 /* CharacterTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +402,11 @@
 			files = (
 				0D80CDF62C3741F800E2E523 /* ContentView.swift in Sources */,
 				0D80CDF42C3741F800E2E523 /* RickAndMortyCharactersApp.swift in Sources */,
+				0D80CE362C374A5700E2E523 /* UIView+Extensions.swift in Sources */,
+				0D80CE382C374BC900E2E523 /* UITableView+Extensions.swift in Sources */,
+				0D80CE2A2C3747B600E2E523 /* CharactersListViewController.swift in Sources */,
+				0D80CE322C3748B100E2E523 /* CharacterTableViewCell.swift in Sources */,
+				0DEB9E802C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

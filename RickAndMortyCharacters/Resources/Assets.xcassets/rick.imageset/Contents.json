@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Rick_Sanchez.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
