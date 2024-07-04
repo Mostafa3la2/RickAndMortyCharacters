@@ -94,9 +94,13 @@
 		0D80CDF22C3741F800E2E523 /* RickAndMortyCharacters */ = {
 			isa = PBXGroup;
 			children = (
-				0D80CDF32C3741F800E2E523 /* RickAndMortyCharactersApp.swift */,
+				0D80CE1D2C37445300E2E523 /* Application */,
+				0D80CE1F2C37446200E2E523 /* Presentation */,
+				0D80CE1E2C37445C00E2E523 /* Domain */,
+				0D80CE202C37446800E2E523 /* Data */,
+				0D80CE222C3744C900E2E523 /* Utilities */,
+				0D80CE212C3744A000E2E523 /* Resources */,
 				0D80CDF52C3741F800E2E523 /* ContentView.swift */,
-				0D80CDF72C3741F900E2E523 /* Assets.xcassets */,
 				0D80CDF92C3741F900E2E523 /* Preview Content */,
 			);
 			path = RickAndMortyCharacters;
@@ -125,6 +129,90 @@
 				0D80CE102C3741FA00E2E523 /* RickAndMortyCharactersUITestsLaunchTests.swift */,
 			);
 			path = RickAndMortyCharactersUITests;
+			sourceTree = "<group>";
+		};
+		0D80CE1D2C37445300E2E523 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0D80CDF32C3741F800E2E523 /* RickAndMortyCharactersApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0D80CE1E2C37445C00E2E523 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0D80CE262C37452000E2E523 /* UseCases */,
+				0D80CE272C37452B00E2E523 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0D80CE1F2C37446200E2E523 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0D80CE232C3744FA00E2E523 /* Views */,
+				0D80CE242C37450000E2E523 /* ViewModels */,
+				0D80CE252C37450C00E2E523 /* Models */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		0D80CE202C37446800E2E523 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0D80CE212C3744A000E2E523 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0D80CDF72C3741F900E2E523 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0D80CE222C3744C900E2E523 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0D80CE232C3744FA00E2E523 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0D80CE242C37450000E2E523 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0D80CE252C37450C00E2E523 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0D80CE262C37452000E2E523 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		0D80CE272C37452B00E2E523 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
