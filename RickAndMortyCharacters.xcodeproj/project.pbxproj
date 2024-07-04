@@ -21,6 +21,9 @@
 		0D80CE362C374A5700E2E523 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CE352C374A5700E2E523 /* UIView+Extensions.swift */; };
 		0D80CE382C374BC900E2E523 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CE372C374BC900E2E523 /* UITableView+Extensions.swift */; };
 		0DEB9E802C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9E7F2C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift */; };
+		0DEB9E832C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9E812C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift */; };
+		0DEB9E842C37587B00C3A629 /* CharacterStatusCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB9E822C37587B00C3A629 /* CharacterStatusCollectionViewCell.xib */; };
+		0DEB9E862C375A1200C3A629 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9E852C375A1200C3A629 /* UICollectionView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		0D80CE352C374A5700E2E523 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		0D80CE372C374BC900E2E523 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		0DEB9E7F2C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersNavigationControllerRepresentable.swift; sourceTree = "<group>"; };
+		0DEB9E812C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatusCollectionViewCell.swift; sourceTree = "<group>"; };
+		0DEB9E822C37587B00C3A629 /* CharacterStatusCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterStatusCollectionViewCell.xib; sourceTree = "<group>"; };
+		0DEB9E852C375A1200C3A629 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +249,8 @@
 		0D80CE2D2C37485600E2E523 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				0DEB9E812C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift */,
+				0DEB9E822C37587B00C3A629 /* CharacterStatusCollectionViewCell.xib */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 			children = (
 				0D80CE352C374A5700E2E523 /* UIView+Extensions.swift */,
 				0D80CE372C374BC900E2E523 /* UITableView+Extensions.swift */,
+				0DEB9E852C375A1200C3A629 /* UICollectionView+Extensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -376,6 +385,7 @@
 				0D80CE2B2C3747B600E2E523 /* CharactersListViewController.xib in Resources */,
 				0D80CDF82C3741F900E2E523 /* Assets.xcassets in Resources */,
 				0D80CE332C3748B100E2E523 /* CharacterTableViewCell.xib in Resources */,
+				0DEB9E842C37587B00C3A629 /* CharacterStatusCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +415,9 @@
 				0D80CE362C374A5700E2E523 /* UIView+Extensions.swift in Sources */,
 				0D80CE382C374BC900E2E523 /* UITableView+Extensions.swift in Sources */,
 				0D80CE2A2C3747B600E2E523 /* CharactersListViewController.swift in Sources */,
+				0DEB9E862C375A1200C3A629 /* UICollectionView+Extensions.swift in Sources */,
 				0D80CE322C3748B100E2E523 /* CharacterTableViewCell.swift in Sources */,
+				0DEB9E832C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift in Sources */,
 				0DEB9E802C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

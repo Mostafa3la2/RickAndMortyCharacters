@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CharacterStatusCollectionViewCell" customModule="RickAndMortyCharacters" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="49"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="90" height="49"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvC-Su-Wh0" userLabel="ContentView">
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="49"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sli-wc-bUg">
+                                <rect key="frame" x="8" y="8" width="74" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Sli-wc-bUg" secondAttribute="bottom" constant="8" id="P2Z-BN-PGi"/>
+                            <constraint firstItem="Sli-wc-bUg" firstAttribute="top" secondItem="fvC-Su-Wh0" secondAttribute="top" constant="8" id="mDI-oH-amc"/>
+                            <constraint firstItem="Sli-wc-bUg" firstAttribute="leading" secondItem="fvC-Su-Wh0" secondAttribute="leading" constant="8" id="oNw-4q-VvB"/>
+                            <constraint firstAttribute="trailing" secondItem="Sli-wc-bUg" secondAttribute="trailing" constant="8" id="wbP-tB-NoA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="fvC-Su-Wh0" secondAttribute="bottom" id="cq1-td-Jfi"/>
+                <constraint firstItem="fvC-Su-Wh0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gDl-Tr-THi"/>
+                <constraint firstAttribute="trailing" secondItem="fvC-Su-Wh0" secondAttribute="trailing" id="hfW-ND-gvR"/>
+                <constraint firstItem="fvC-Su-Wh0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oQH-gy-7jn"/>
+            </constraints>
+            <size key="customSize" width="90" height="49"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="viewBorderColor">
+                    <color key="value" systemColor="systemGray5Color"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="viewBorderWidth">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="characterStatusLabel" destination="Sli-wc-bUg" id="Gwm-qD-UIj"/>
+            </connections>
+            <point key="canvasLocation" x="160.30534351145039" y="-11.619718309859156"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
