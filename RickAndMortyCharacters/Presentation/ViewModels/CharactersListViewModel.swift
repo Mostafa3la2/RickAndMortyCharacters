@@ -48,7 +48,7 @@ class CharactersListViewModel: ObservableObject {
         if !filter.isEmpty {
             parameters.merge(filter) { (current, _) in current }
         } else {
-            // reset selection 
+            // reset selection
             selectedFilterIndex = -1
         }
         fetchCharactersUseCase.execute(parameters: parameters)
@@ -75,5 +75,13 @@ class CharactersListViewModel: ObservableObject {
     func filterCharacters(filterType: String = "status", filterValue: String) {
         selectedFilterIndex = statusFilter.firstIndex{$0.rawValue == filterValue} ?? -1
         self.fetchCharacters(resetPage: true, filter: [filterType: filterValue])
+    }
+
+    func getCharacterDetails(atIndex index: Int) -> CharacterDetailsModel? {
+        if let character = charactersPage?.results[index] {
+            let characterDetails = CharacterDetailsModel(character: character)
+            return characterDetails
+        }
+        return nil
     }
 }

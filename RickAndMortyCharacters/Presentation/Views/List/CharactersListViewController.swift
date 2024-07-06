@@ -19,6 +19,7 @@ class CharactersListViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
     private let loadingIndicator = UIActivityIndicatorView(style: .medium)
     private let refreshIndicator = UIRefreshControl()
+    private var coordinator: CharacterCoordinatorProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +28,14 @@ class CharactersListViewController: UIViewController {
         setupBindings()
         viewModel?.fetchCharacters(resetPage: true)
     }
-    func injectViewModel(viewModel: CharactersListViewModel) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // ensure navigation bar visibility restoration after being hidden in details page
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    func injectData(viewModel: CharactersListViewModel, coordinator: CharacterCoordinatorProtocol) {
         self.viewModel = viewModel
+        self.coordinator = coordinator
     }
 
     // MARK: - UI Setup methods
@@ -93,6 +100,12 @@ extension CharactersListViewController: UITableViewDelegate, UITableViewDataSour
             cell.setCharacterData(character: character)
         }
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let characterDetails = viewModel?.getCharacterDetails(atIndex: indexPath.row) else {
+            return
+        }
+        coordinator?.showCharacterDetails(characterDetail: characterDetails)
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: StatusHeaderView = StatusHeaderView.fromNib()

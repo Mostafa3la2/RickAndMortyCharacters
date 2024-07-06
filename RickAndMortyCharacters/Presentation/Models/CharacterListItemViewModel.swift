@@ -16,4 +16,5 @@ struct CharacterListItemViewModel {
         self.species = character.species
         self.status = character.status
     }
+
 }
