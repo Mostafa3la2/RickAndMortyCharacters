@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol FetchAllCharactersUseCase {
-    func execute() -> AnyPublisher<[Character], Error>
+    func execute() -> AnyPublisher<CharactersPage, Error>
 }
 
 final class DefaultFetchAllCharactersUseCase: FetchAllCharactersUseCase {
@@ -20,7 +20,7 @@ final class DefaultFetchAllCharactersUseCase: FetchAllCharactersUseCase {
         self.charactersRepository = charactersRepository
     }
 
-    func execute() -> AnyPublisher<[Character], Error> {
+    func execute() -> AnyPublisher<CharactersPage, Error> {
         return charactersRepository.getAllCharacters()
     }
 }

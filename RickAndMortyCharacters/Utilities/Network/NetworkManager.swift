@@ -9,12 +9,12 @@ import Foundation
 import Combine
 
 protocol NetworkManager {
-    func fetchAllCharacters() -> AnyPublisher<CharacterResponse, Error>
+    func fetchAllCharacters() -> AnyPublisher<CharactersPage, Error>
 }
 class DefaultNetworkManager: NetworkManager {
     private let apiClient = APIClient()
 
-    func fetchAllCharacters() -> AnyPublisher<CharacterResponse, Error> {
+    func fetchAllCharacters() -> AnyPublisher<CharactersPage, Error> {
         guard let url = Endpoints.characters() else {
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }

@@ -19,7 +19,7 @@ class CharacterTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func setCharacterData(character: Character) {
+    func setCharacterData(character: CharacterListItemViewModel) {
         self.characterNameLabel.text = character.name
         self.characterSpeciesLabel.text = character.species
     }

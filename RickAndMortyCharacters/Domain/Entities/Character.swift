@@ -7,6 +7,20 @@
 
 import Foundation
 
+// MARK: - Characters Page
+
+struct CharactersPage: Decodable {
+    let info: Info
+    let results: [Character]
+}
+
+struct Info: Decodable {
+    let count: Int
+    let pages: Int
+    let next: String?
+    let prev: String?
+}
+
 // MARK: - Character
 struct Character: Codable {
     let id: Int?

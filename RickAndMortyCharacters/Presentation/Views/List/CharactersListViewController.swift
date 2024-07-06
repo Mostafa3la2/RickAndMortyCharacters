@@ -37,7 +37,7 @@ class CharactersListViewController: UIViewController {
     }
 
     private func setupBindings() {
-        viewModel?.$characters
+        viewModel?.$characterItems
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.charactersTableView.reloadData()
@@ -60,14 +60,14 @@ class CharactersListViewController: UIViewController {
 extension CharactersListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.characters.count ?? 0
+        return viewModel?.characterItems.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: charactersTableViewCellIdentifier) as? CharacterTableViewCell else {
             return UITableViewCell()
         }
-        if let character = viewModel?.characters[indexPath.row] {
+        if let character = viewModel?.characterItems[indexPath.row] {
             cell.setCharacterData(character: character)
         }
         return cell

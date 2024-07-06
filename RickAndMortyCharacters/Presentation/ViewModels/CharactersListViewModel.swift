@@ -13,8 +13,9 @@ class CharactersListViewModel: ObservableObject {
     // MARK: - Properties
     private let fetchCharactersUseCase: FetchAllCharactersUseCase
     // private let filterCharactersUseCase: FilterCharactersUseCase
-    @Published var characters: [Character] = []
-    @Published var filteredCharacters: [Character] = []
+    private var charactersPage: CharactersPage?
+    private var filteredCharacters: [Character] = []
+    @Published var characterItems: [CharacterListItemViewModel] = []
     @Published var error: Error?
     private var cancellables = Set<AnyCancellable>()
 
@@ -34,8 +35,9 @@ class CharactersListViewModel: ObservableObject {
                 case .finished:
                     break
                 }
-            } receiveValue: { characters in
-                self.characters = characters
+            } receiveValue: { charactersPage in
+                self.charactersPage = charactersPage
+                self.characterItems = charactersPage.results.map(CharacterListItemViewModel.init)
             }
             .store(in: &cancellables)
     }
