@@ -13,7 +13,7 @@ class CharacterStatusCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var characterStatusLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.viewCornerRadius = self.frame.height/2
+        self.viewCornerRadius = self.frame.height/2.5
         // Initialization code
     }
 

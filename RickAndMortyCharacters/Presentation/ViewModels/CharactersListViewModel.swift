@@ -47,6 +47,9 @@ class CharactersListViewModel: ObservableObject {
         var parameters = ["page": "\(currentPage)"]
         if !filter.isEmpty {
             parameters.merge(filter) { (current, _) in current }
+        } else {
+            // reset selection 
+            selectedFilterIndex = -1
         }
         fetchCharactersUseCase.execute(parameters: parameters)
             .sink { completion in

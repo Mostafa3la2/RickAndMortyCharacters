@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class CharacterTableViewCell: UITableViewCell {
 
     // MARK: - UI Outlets
@@ -22,5 +22,8 @@ class CharacterTableViewCell: UITableViewCell {
     func setCharacterData(character: CharacterListItemViewModel) {
         self.characterNameLabel.text = character.name
         self.characterSpeciesLabel.text = character.species
+        if let url = URL(string: character.image ?? "") {
+            self.characterImageView.kf.setImage(with: url)
+        }
     }
 }
