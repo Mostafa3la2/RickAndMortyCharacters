@@ -10,4 +10,7 @@ import Foundation
 struct Endpoints {
     static let baseURL = "https://rickandmortyapi.com/api/"
 
+    static func characters() -> URL? {
+        return URL(string: baseURL + "character")
+    }
 }
