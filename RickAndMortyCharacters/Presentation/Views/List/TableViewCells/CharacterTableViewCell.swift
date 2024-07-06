@@ -19,7 +19,8 @@ class CharacterTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func setCharacterData() {
-        // TODO: pass character model and set ui data
+    func setCharacterData(character: Character) {
+        self.characterNameLabel.text = character.name
+        self.characterSpeciesLabel.text = character.species
     }
 }

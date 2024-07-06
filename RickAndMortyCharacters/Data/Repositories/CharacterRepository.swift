@@ -18,5 +18,7 @@ class DefaultCharacterRepository: CharacterRepository {
 
     func getAllCharacters() -> AnyPublisher<[Character], Error> {
         return remoteDataSource.fetchAllCharacters()
+            .map{ $0.results }
+            .eraseToAnyPublisher()
     }
 }

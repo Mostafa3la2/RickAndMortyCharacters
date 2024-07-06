@@ -20,8 +20,7 @@ struct CharactersNavigationControllerRepresentable: UIViewControllerRepresentabl
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
 
     private func setupNavigationController() {
-        let charsListVC = CharactersListViewController()
-        navigationController.setViewControllers([charsListVC], animated: true)
+        navigationController.setViewControllers([initializeController()], animated: true)
         setupNavigationControllerAppearance()
     }
     private func setupNavigationControllerAppearance() {
@@ -30,5 +29,15 @@ struct CharactersNavigationControllerRepresentable: UIViewControllerRepresentabl
         standardAppearance.backgroundColor = .white
         standardAppearance.backgroundImage = UIImage()
         navigationController.navigationBar.standardAppearance = standardAppearance
+    }
+    func initializeController() -> UIViewController {
+        let charsListVC = CharactersListViewController()
+        let networkManager = DefaultNetworkManager()
+        let remoteDataSource = DefaultCharactersRemoteDataSource(networkManager: networkManager)
+        let charactersRepo = DefaultCharacterRepository(remoteDataSource: remoteDataSource)
+        let fetchAllCharactersUseCase = DefaultFetchAllCharactersUseCase(charactersRepository: charactersRepo)
+        let viewModel = CharactersListViewModel(fetchCharactersUseCase: fetchAllCharactersUseCase)
+        charsListVC.setupViewModel(viewModel: viewModel)
+        return charsListVC
     }
 }

@@ -9,10 +9,17 @@ import Foundation
 import Combine
 
 protocol CharactersRemoteDataSource {
-    func fetchAllCharacters() -> AnyPublisher<[Character], Error>
+    func fetchAllCharacters() -> AnyPublisher<CharacterResponse, Error>
 }
-class DefaultCharactersRemoteDataSource: CharactersRemoteDataSource{
-    func fetchAllCharacters() -> AnyPublisher<[Character], Error> {
-        // TODO: add the fetch logic
+class DefaultCharactersRemoteDataSource: CharactersRemoteDataSource {
+
+    private let networkManager: NetworkManager
+
+    init(networkManager: NetworkManager) {
+        self.networkManager = networkManager
+    }
+
+    func fetchAllCharacters() -> AnyPublisher<CharacterResponse, Error> {
+        return networkManager.fetchAllCharacters()
     }
 }
