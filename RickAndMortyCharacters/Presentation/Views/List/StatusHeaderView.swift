@@ -19,6 +19,7 @@ class StatusHeaderView: UITableViewHeaderFooterView {
         statusCollectionView.delegate = self
         statusCollectionView.dataSource = self
         statusCollectionView.registerCell(statusCollectionViewCellIdentifier)
+        statusCollectionView.showsHorizontalScrollIndicator = false
     }
     private func setupHeaderView(){
         let backgroundView = UIView()

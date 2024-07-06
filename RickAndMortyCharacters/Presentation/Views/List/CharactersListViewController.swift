@@ -34,6 +34,7 @@ class CharactersListViewController: UIViewController {
         charactersTableView.delegate = self
         charactersTableView.dataSource = self
         charactersTableView.registerCell(charactersTableViewCellIdentifier)
+        charactersTableView.showsVerticalScrollIndicator = false
     }
 
     private func setupBindings() {
