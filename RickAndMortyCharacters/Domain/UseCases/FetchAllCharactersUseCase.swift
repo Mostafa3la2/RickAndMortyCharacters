@@ -9,18 +9,19 @@ import Foundation
 import Combine
 
 protocol FetchAllCharactersUseCase {
-    func execute() -> AnyPublisher<CharactersPage, Error>
+    func execute(parameters: [String: String]) -> AnyPublisher<CharactersPage, Error>
 }
 
 final class DefaultFetchAllCharactersUseCase: FetchAllCharactersUseCase {
 
     private let charactersRepository: CharacterRepository
 
+
     init(charactersRepository: CharacterRepository) {
         self.charactersRepository = charactersRepository
     }
 
-    func execute() -> AnyPublisher<CharactersPage, Error> {
-        return charactersRepository.getAllCharacters()
+    func execute(parameters: [String: String] = [:]) -> AnyPublisher<CharactersPage, Error> {
+        return charactersRepository.getAllCharacters(withParameters: parameters)
     }
 }

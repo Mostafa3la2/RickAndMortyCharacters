@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol CharacterRepository {
-    func getAllCharacters() -> AnyPublisher<CharactersPage, Error>
+    func getAllCharacters(withParameters parameters: [String: String]) -> AnyPublisher<CharactersPage, Error>
 }

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol CharactersRemoteDataSource {
-    func fetchAllCharacters() -> AnyPublisher<CharactersPage, Error>
+    func fetchAllCharacters(withParameters parameters: [String: String]) -> AnyPublisher<CharactersPage, Error>
 }
 class DefaultCharactersRemoteDataSource: CharactersRemoteDataSource {
 
@@ -19,7 +19,7 @@ class DefaultCharactersRemoteDataSource: CharactersRemoteDataSource {
         self.networkManager = networkManager
     }
 
-    func fetchAllCharacters() -> AnyPublisher<CharactersPage, Error> {
-        return networkManager.fetchAllCharacters()
+    func fetchAllCharacters(withParameters parameters: [String: String]) -> AnyPublisher<CharactersPage, Error> {
+        return networkManager.fetchAllCharacters(withParameters: parameters)
     }
 }

@@ -37,7 +37,7 @@ struct CharactersNavigationControllerRepresentable: UIViewControllerRepresentabl
         let charactersRepo = DefaultCharacterRepository(remoteDataSource: remoteDataSource)
         let fetchAllCharactersUseCase = DefaultFetchAllCharactersUseCase(charactersRepository: charactersRepo)
         let viewModel = CharactersListViewModel(fetchCharactersUseCase: fetchAllCharactersUseCase)
-        charsListVC.setupViewModel(viewModel: viewModel)
+        charsListVC.injectViewModel(viewModel: viewModel)
         return charsListVC
     }
 }

@@ -17,15 +17,16 @@ class CharactersListViewController: UIViewController {
     private let charactersTableViewCellIdentifier = "CharacterTableViewCell"
     private var viewModel: CharactersListViewModel?
     private var cancellables = Set<AnyCancellable>()
+    private let loadingIndicator = UIActivityIndicatorView(style: .medium)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Characters"
         setupTableView()
         setupBindings()
-        viewModel?.fetchCharacters()
+        viewModel?.fetchCharacters(resetPage: true)
     }
-    func setupViewModel(viewModel: CharactersListViewModel) {
+    func injectViewModel(viewModel: CharactersListViewModel) {
         self.viewModel = viewModel
     }
 
@@ -35,6 +36,7 @@ class CharactersListViewController: UIViewController {
         charactersTableView.dataSource = self
         charactersTableView.registerCell(charactersTableViewCellIdentifier)
         charactersTableView.showsVerticalScrollIndicator = false
+        charactersTableView.tableFooterView = loadingIndicator
     }
 
     private func setupBindings() {
@@ -52,6 +54,17 @@ class CharactersListViewController: UIViewController {
                     // Handle error (e.g., show an alert)
                     // TODO: show SwiftUI Alert ?
                     print("Error: \(error.localizedDescription)")
+                }
+            }
+            .store(in: &cancellables)
+
+        viewModel?.$loading
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isLoading in
+                if isLoading {
+                    self?.loadingIndicator.startAnimating()
+                } else {
+                    self?.loadingIndicator.stopAnimating()
                 }
             }
             .store(in: &cancellables)
@@ -76,5 +89,13 @@ extension CharactersListViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: StatusHeaderView = StatusHeaderView.fromNib()
         return headerView
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        if offsetY > contentHeight - scrollView.frame.height && viewModel?.loading == false {
+            viewModel?.fetchNextPage()
+        }
     }
 }
