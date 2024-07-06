@@ -19,4 +19,7 @@ class DefaultCharacterRepository: CharacterRepository {
     func getAllCharacters(withParameters parameters: [String: String]) -> AnyPublisher<CharactersPage, Error> {
         return remoteDataSource.fetchAllCharacters(withParameters: parameters)
     }
+    func filterCharacters(withParameters parameters: [String: String]) -> AnyPublisher<CharactersPage, Error> {
+        return remoteDataSource.fetchAllCharacters(withParameters: parameters)
+    }
 }

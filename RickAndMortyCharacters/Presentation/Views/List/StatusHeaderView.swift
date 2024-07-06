@@ -14,7 +14,7 @@ class StatusHeaderView: UITableViewHeaderFooterView {
     // MARK: - Properties
     private let statusCollectionViewCellIdentifier = "CharacterStatusCollectionViewCell"
     private var viewModel: CharactersListViewModel?
-
+    private var selectedIndex = -1
     override func awakeFromNib() {
         super.awakeFromNib()
         setupHeaderView()
@@ -51,6 +51,17 @@ extension StatusHeaderView: UICollectionViewDataSource, UICollectionViewDelegate
         if let status = viewModel?.statusFilter[indexPath.row] {
             cell.setStatusData(status: status)
         }
+        if indexPath.row == viewModel?.selectedFilterIndex {
+            cell.contentView.backgroundColor = .systemTeal
+        } else {
+            cell.contentView.backgroundColor = .white
+        }
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let status = viewModel?.statusFilter[indexPath.row] {
+            viewModel?.filterCharacters(filterValue: status.rawValue)
+        }
+        collectionView.reloadData()
     }
 }

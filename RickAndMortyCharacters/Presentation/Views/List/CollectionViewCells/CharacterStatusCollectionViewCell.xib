@@ -28,7 +28,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Sli-wc-bUg" secondAttribute="bottom" constant="8" id="P2Z-BN-PGi"/>
                             <constraint firstItem="Sli-wc-bUg" firstAttribute="top" secondItem="fvC-Su-Wh0" secondAttribute="top" constant="8" id="mDI-oH-amc"/>
@@ -39,6 +38,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="fvC-Su-Wh0" secondAttribute="bottom" id="cq1-td-Jfi"/>
                 <constraint firstItem="fvC-Su-Wh0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gDl-Tr-THi"/>
@@ -61,9 +61,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

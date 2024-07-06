@@ -11,14 +11,12 @@ import Combine
 enum CharacterStatus: String {
     case alive = "Alive"
     case dead = "Dead"
-    case unknown = "Unknown"
-    case whatever = "whatever"
+    case unknown = "unknown"
 }
 class CharactersListViewModel: ObservableObject {
 
     // MARK: - Properties
     private let fetchCharactersUseCase: FetchAllCharactersUseCase
-    // private let filterCharactersUseCase: FilterCharactersUseCase
     private var charactersPage: CharactersPage?
     private var filteredCharacters: [Character] = []
 
@@ -28,15 +26,14 @@ class CharactersListViewModel: ObservableObject {
     private var currentPage = 1
     private var canLoadMorePages = true
     private var cancellables = Set<AnyCancellable>()
-    var statusFilter = [CharacterStatus.alive, .dead, .unknown, .whatever]
-
+    var statusFilter = [CharacterStatus.alive, .dead, .unknown]
+    var selectedFilterIndex = -1
     // MARK: - Methods
     init(fetchCharactersUseCase: FetchAllCharactersUseCase) {
         self.fetchCharactersUseCase = fetchCharactersUseCase
-        // self.filterCharactersUseCase = filterCharactersUseCase
     }
 
-    func fetchCharacters(resetPage: Bool = false) {
+    func fetchCharacters(resetPage: Bool = false, filter: [String: String] = [:]) {
         if resetPage {
             currentPage = 1
             canLoadMorePages = true
@@ -47,7 +44,10 @@ class CharactersListViewModel: ObservableObject {
             return
         }
         loading = true
-        let parameters = ["page": "\(currentPage)"]
+        var parameters = ["page": "\(currentPage)"]
+        if !filter.isEmpty {
+            parameters.merge(filter) { (current, _) in current }
+        }
         fetchCharactersUseCase.execute(parameters: parameters)
             .sink { completion in
                 self.loading = false
@@ -69,7 +69,8 @@ class CharactersListViewModel: ObservableObject {
     func fetchNextPage() {
         fetchCharacters()
     }
-//    func filterCharacters(by criteria: (Character) -> Bool) {
-//        self.filteredCharacters = filterCharactersUseCase.execute(characters: characters, criteria: criteria)
-//    }
+    func filterCharacters(filterType: String = "status", filterValue: String) {
+        selectedFilterIndex = statusFilter.firstIndex{$0.rawValue == filterValue} ?? -1
+        self.fetchCharacters(resetPage: true, filter: [filterType: filterValue])
+    }
 }
