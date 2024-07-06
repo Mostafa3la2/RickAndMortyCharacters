@@ -8,12 +8,22 @@
 import UIKit
 
 class StatusHeaderView: UITableViewHeaderFooterView {
+    // MARK: - IBOutlet
     @IBOutlet weak var statusCollectionView: UICollectionView!
+
+    // MARK: - Properties
     private let statusCollectionViewCellIdentifier = "CharacterStatusCollectionViewCell"
+    private var viewModel: CharactersListViewModel?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupHeaderView()
         setupCollectionView()
+    }
+
+    func injectViewModel(viewModel: CharactersListViewModel?) {
+        self.viewModel = viewModel
+        self.statusCollectionView.reloadData()
     }
     private func setupCollectionView() {
         statusCollectionView.delegate = self
@@ -31,12 +41,15 @@ class StatusHeaderView: UITableViewHeaderFooterView {
 extension StatusHeaderView: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        return viewModel?.statusFilter.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: statusCollectionViewCellIdentifier, for: indexPath) as? CharacterStatusCollectionViewCell else {
             return UICollectionViewCell()
+        }
+        if let status = viewModel?.statusFilter[indexPath.row] {
+            cell.setStatusData(status: status)
         }
         return cell
     }

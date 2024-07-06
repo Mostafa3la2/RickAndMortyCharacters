@@ -36,7 +36,6 @@ class CharactersListViewController: UIViewController {
         charactersTableView.dataSource = self
         charactersTableView.registerCell(charactersTableViewCellIdentifier)
         charactersTableView.showsVerticalScrollIndicator = false
-        charactersTableView.tableFooterView = loadingIndicator
     }
 
     private func setupBindings() {
@@ -88,14 +87,22 @@ extension CharactersListViewController: UITableViewDelegate, UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: StatusHeaderView = StatusHeaderView.fromNib()
+        headerView.injectViewModel(viewModel: self.viewModel)
         return headerView
     }
 
+    // MARK: Pagination Logic
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         if offsetY > contentHeight - scrollView.frame.height && viewModel?.loading == false {
             viewModel?.fetchNextPage()
         }
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return loadingIndicator
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 20
     }
 }

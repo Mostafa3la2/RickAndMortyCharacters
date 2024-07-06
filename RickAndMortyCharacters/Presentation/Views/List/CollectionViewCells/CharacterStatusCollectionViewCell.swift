@@ -17,7 +17,7 @@ class CharacterStatusCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func setStatusData() {
-        // TODO: pass status dynamically from API ?
+    func setStatusData(status: CharacterStatus) {
+        self.characterStatusLabel.text = status.rawValue
     }
 }

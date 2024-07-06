@@ -8,6 +8,12 @@
 import Foundation
 import Combine
 
+enum CharacterStatus: String {
+    case alive = "Alive"
+    case dead = "Dead"
+    case unknown = "Unknown"
+    case whatever = "whatever"
+}
 class CharactersListViewModel: ObservableObject {
 
     // MARK: - Properties
@@ -22,6 +28,7 @@ class CharactersListViewModel: ObservableObject {
     private var currentPage = 1
     private var canLoadMorePages = true
     private var cancellables = Set<AnyCancellable>()
+    var statusFilter = [CharacterStatus.alive, .dead, .unknown, .whatever]
 
     // MARK: - Methods
     init(fetchCharactersUseCase: FetchAllCharactersUseCase) {
