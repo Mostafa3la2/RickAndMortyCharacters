@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,17 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="90" height="49"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sli-wc-bUg">
-                                <rect key="frame" x="8" y="8" width="74" height="33"/>
+                                <rect key="frame" x="12" y="12" width="66" height="25"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Sli-wc-bUg" secondAttribute="bottom" constant="8" id="P2Z-BN-PGi"/>
-                            <constraint firstItem="Sli-wc-bUg" firstAttribute="top" secondItem="fvC-Su-Wh0" secondAttribute="top" constant="8" id="mDI-oH-amc"/>
-                            <constraint firstItem="Sli-wc-bUg" firstAttribute="leading" secondItem="fvC-Su-Wh0" secondAttribute="leading" constant="8" id="oNw-4q-VvB"/>
-                            <constraint firstAttribute="trailing" secondItem="Sli-wc-bUg" secondAttribute="trailing" constant="8" id="wbP-tB-NoA"/>
+                            <constraint firstAttribute="bottom" secondItem="Sli-wc-bUg" secondAttribute="bottom" constant="12" id="P2Z-BN-PGi"/>
+                            <constraint firstItem="Sli-wc-bUg" firstAttribute="top" secondItem="fvC-Su-Wh0" secondAttribute="top" constant="12" id="mDI-oH-amc"/>
+                            <constraint firstItem="Sli-wc-bUg" firstAttribute="leading" secondItem="fvC-Su-Wh0" secondAttribute="leading" constant="12" id="oNw-4q-VvB"/>
+                            <constraint firstAttribute="trailing" secondItem="Sli-wc-bUg" secondAttribute="trailing" constant="12" id="wbP-tB-NoA"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -48,7 +47,7 @@
             <size key="customSize" width="90" height="49"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="viewBorderColor">
-                    <color key="value" systemColor="systemGray5Color"/>
+                    <color key="value" systemColor="systemGray3Color"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="number" keyPath="viewBorderWidth">
                     <real key="value" value="1"/>
@@ -61,8 +60,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray3Color">
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

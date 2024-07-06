@@ -10,6 +10,7 @@ import Kingfisher
 class CharacterTableViewCell: UITableViewCell {
 
     // MARK: - UI Outlets
+    @IBOutlet weak var paddedView: UIView!
     @IBOutlet weak var characterSpeciesLabel: UILabel!
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterImageView: UIImageView!
@@ -24,6 +25,26 @@ class CharacterTableViewCell: UITableViewCell {
         self.characterSpeciesLabel.text = character.species
         if let url = URL(string: character.image ?? "") {
             self.characterImageView.kf.setImage(with: url)
+        }
+        // assumption: cell color based on status
+        self.setCellStyle(basedOn: character.status)
+    }
+    private func setCellStyle(basedOn status: String?) {
+        if let status {
+            guard let status = CharacterStatus(rawValue: status) else {
+                return
+            }
+            switch status {
+            case .alive:
+                self.paddedView.viewBorderWidth = 0
+                self.paddedView.backgroundColor = .cyan.withAlphaComponent(0.05)
+            case .dead:
+                self.paddedView.viewBorderWidth = 0
+                self.paddedView.backgroundColor = .magenta.withAlphaComponent(0.05)
+            case .unknown:
+                self.paddedView.viewBorderWidth = 1
+                self.paddedView.backgroundColor = .white
+            }
         }
     }
 }
