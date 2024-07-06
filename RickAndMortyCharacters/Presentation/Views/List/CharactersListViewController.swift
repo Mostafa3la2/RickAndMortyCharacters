@@ -18,6 +18,7 @@ class CharactersListViewController: UIViewController {
     private var viewModel: CharactersListViewModel?
     private var cancellables = Set<AnyCancellable>()
     private let loadingIndicator = UIActivityIndicatorView(style: .medium)
+    private let refreshIndicator = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +37,17 @@ class CharactersListViewController: UIViewController {
         charactersTableView.dataSource = self
         charactersTableView.registerCell(charactersTableViewCellIdentifier)
         charactersTableView.showsVerticalScrollIndicator = false
+        refreshIndicator.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        charactersTableView.refreshControl = refreshIndicator
     }
 
     private func setupBindings() {
         viewModel?.$characterItems
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
+                if self?.refreshIndicator.isRefreshing == true {
+                    self?.refreshIndicator.endRefreshing()
+                }
                 self?.charactersTableView.reloadData()
             }
             .store(in: &cancellables)
@@ -67,6 +73,9 @@ class CharactersListViewController: UIViewController {
                 }
             }
             .store(in: &cancellables)
+    }
+    @objc func pullToRefresh() {
+        viewModel?.fetchCharacters(resetPage: true)
     }
 }
 // MARK: - Tableview delegate methods
