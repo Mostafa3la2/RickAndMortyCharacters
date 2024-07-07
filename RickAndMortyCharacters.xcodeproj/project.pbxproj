@@ -42,6 +42,8 @@
 		0DEB9EB62C39F77E00C3A629 /* CharacterDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EB52C39F77E00C3A629 /* CharacterDetailsModel.swift */; };
 		0DEB9EB92C39FA7500C3A629 /* CharacterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EB82C39FA7500C3A629 /* CharacterCoordinator.swift */; };
 		0DEB9EBC2C3A1D5000C3A629 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 0DEB9EBB2C3A1D5000C3A629 /* SkeletonView */; };
+		0DEB9EBF2C3A22D000C3A629 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EBE2C3A22D000C3A629 /* Colors.swift */; };
+		0DEB9EC12C3A230700C3A629 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EC02C3A230700C3A629 /* DesignSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		0DEB9EB32C39C4FB00C3A629 /* CharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsView.swift; sourceTree = "<group>"; };
 		0DEB9EB52C39F77E00C3A629 /* CharacterDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsModel.swift; sourceTree = "<group>"; };
 		0DEB9EB82C39FA7500C3A629 /* CharacterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCoordinator.swift; sourceTree = "<group>"; };
+		0DEB9EBE2C3A22D000C3A629 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0DEB9EC02C3A230700C3A629 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +241,7 @@
 		0D80CE222C3744C900E2E523 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0DEB9EBD2C3A22C200C3A629 /* Design System */,
 				0DEB9EA02C38CF4300C3A629 /* Network */,
 			);
 			path = Utilities;
@@ -383,6 +388,15 @@
 				0DEB9EB82C39FA7500C3A629 /* CharacterCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		0DEB9EBD2C3A22C200C3A629 /* Design System */ = {
+			isa = PBXGroup;
+			children = (
+				0DEB9EBE2C3A22D000C3A629 /* Colors.swift */,
+				0DEB9EC02C3A230700C3A629 /* DesignSystem.swift */,
+			);
+			path = "Design System";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -533,6 +547,7 @@
 				0DEB9EB42C39C4FB00C3A629 /* CharacterDetailsView.swift in Sources */,
 				0DEB9EB62C39F77E00C3A629 /* CharacterDetailsModel.swift in Sources */,
 				0DEB9EA82C38CF7E00C3A629 /* HTTPMethod.swift in Sources */,
+				0DEB9EBF2C3A22D000C3A629 /* Colors.swift in Sources */,
 				0DEB9EA62C38CF7400C3A629 /* Endpoints.swift in Sources */,
 				0D80CDF42C3741F800E2E523 /* RickAndMortyCharactersApp.swift in Sources */,
 				0DEB9E8C2C37669F00C3A629 /* FetchAllCharactersUseCase.swift in Sources */,
@@ -544,6 +559,7 @@
 				0DEB9EB92C39FA7500C3A629 /* CharacterCoordinator.swift in Sources */,
 				0D80CE382C374BC900E2E523 /* UITableView+Extensions.swift in Sources */,
 				0DEB9E912C38ADC600C3A629 /* CharacterRepository.swift in Sources */,
+				0DEB9EC12C3A230700C3A629 /* DesignSystem.swift in Sources */,
 				0DEB9EA22C38CF5B00C3A629 /* APIClient.swift in Sources */,
 				0D80CE2A2C3747B600E2E523 /* CharactersListViewController.swift in Sources */,
 				0DEB9E862C375A1200C3A629 /* UICollectionView+Extensions.swift in Sources */,

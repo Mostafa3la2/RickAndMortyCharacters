@@ -37,10 +37,10 @@ class CharacterTableViewCell: UITableViewCell {
             switch status {
             case .alive:
                 self.paddedView.viewBorderWidth = 0
-                self.paddedView.backgroundColor = .cyan.withAlphaComponent(0.05)
+                self.paddedView.backgroundColor = DesignSystem.Colors.LightBlue.Color
             case .dead:
                 self.paddedView.viewBorderWidth = 0
-                self.paddedView.backgroundColor = .magenta.withAlphaComponent(0.05)
+                self.paddedView.backgroundColor = DesignSystem.Colors.PeachPink.Color
             case .unknown:
                 self.paddedView.viewBorderWidth = 1
                 self.paddedView.backgroundColor = .white

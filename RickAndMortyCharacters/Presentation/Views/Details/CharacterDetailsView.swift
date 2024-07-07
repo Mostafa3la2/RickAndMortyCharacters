@@ -88,6 +88,7 @@ struct CharacterSpeciesLabel: View {
     var body: some View {
         Text(species ?? "")
             .font(.title3)
+            .foregroundStyle(Color(DesignSystem.Colors.ExtraDarkGray.Color))
     }
 }
 struct CharacterStatusLabel: View {
@@ -98,7 +99,7 @@ struct CharacterStatusLabel: View {
     var body: some View {
         Text(status ?? "")
             .padding(.all, 8)
-            .background(.teal)
+            .background(Color(DesignSystem.Colors.BabyBlue.Color))
             .clipShape(.capsule)
     }
 }
@@ -110,7 +111,7 @@ struct CharacterGenderLabel: View {
     var body: some View {
         Text(gender ?? "")
             .font(.title3)
-            .foregroundStyle(.gray)
+            .foregroundStyle(Color(DesignSystem.Colors.MediumGray.Color))
     }
 }
 struct CharacterLocationLabel: View {
@@ -124,7 +125,7 @@ struct CharacterLocationLabel: View {
                 .font(.title2)
                 .fontWeight(.bold)
             Text(location ?? "")
-                .foregroundStyle(.gray)
+                .foregroundStyle(Color(DesignSystem.Colors.ExtraDarkGray.Color))
                 .font(.title2)
                 .fontWeight(.semibold)
         }
