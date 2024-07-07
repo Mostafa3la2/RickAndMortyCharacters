@@ -49,6 +49,7 @@
 		0DEB9ED32C3AD2FF00C3A629 /* UnitTestAppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9ED22C3AD2FF00C3A629 /* UnitTestAppContainer.swift */; };
 		0DEB9ED82C3ADA0000C3A629 /* MockCharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9ED72C3ADA0000C3A629 /* MockCharacterRepository.swift */; };
 		0DEB9EDA2C3ADF7A00C3A629 /* CharactersListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9ED92C3ADF7A00C3A629 /* CharactersListViewModelTests.swift */; };
+		0DEB9EDD2C3B40BF00C3A629 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EDC2C3B40BF00C3A629 /* MockNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		0DEB9ED22C3AD2FF00C3A629 /* UnitTestAppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestAppContainer.swift; sourceTree = "<group>"; };
 		0DEB9ED72C3ADA0000C3A629 /* MockCharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterRepository.swift; sourceTree = "<group>"; };
 		0DEB9ED92C3ADF7A00C3A629 /* CharactersListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModelTests.swift; sourceTree = "<group>"; };
+		0DEB9EDC2C3B40BF00C3A629 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		0D80CE032C3741FA00E2E523 /* RickAndMortyCharactersTests */ = {
 			isa = PBXGroup;
 			children = (
+				0DEB9EDB2C3B40AB00C3A629 /* Mock NetworkManager */,
 				0DEB9ED42C3AD38100C3A629 /* Mock Repositories */,
 				0DEB9ED12C3AD2E100C3A629 /* Container */,
 				0DEB9ED92C3ADF7A00C3A629 /* CharactersListViewModelTests.swift */,
@@ -438,6 +441,14 @@
 			path = "Mock Repositories";
 			sourceTree = "<group>";
 		};
+		0DEB9EDB2C3B40AB00C3A629 /* Mock NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				0DEB9EDC2C3B40BF00C3A629 /* MockNetworkManager.swift */,
+			);
+			path = "Mock NetworkManager";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -619,6 +630,7 @@
 				0D80CE052C3741FA00E2E523 /* RickAndMortyCharactersTests.swift in Sources */,
 				0DEB9ED82C3ADA0000C3A629 /* MockCharacterRepository.swift in Sources */,
 				0DEB9ED32C3AD2FF00C3A629 /* UnitTestAppContainer.swift in Sources */,
+				0DEB9EDD2C3B40BF00C3A629 /* MockNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,7 +847,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NC7G924HW9;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mostafa3la2.RickAndMortyCharactersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -855,7 +867,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NC7G924HW9;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mostafa3la2.RickAndMortyCharactersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -874,6 +886,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NC7G924HW9;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mostafa3la2.RickAndMortyCharactersUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -892,6 +905,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NC7G924HW9;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mostafa3la2.RickAndMortyCharactersUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

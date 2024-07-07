@@ -12,22 +12,43 @@ import Combine
 final class CharactersListViewModelTests: XCTestCase {
 
     private var viewModel: CharactersListViewModel!
-    private var mockRepo: MockCharacterRepository!
-    private var fetchAllCharactersUseCase: DefaultFetchAllCharactersUseCase!
-    private var cancellables: Set<AnyCancellable>!
+    private var mockNetworkManager: MockNetworkManager!
+    private var dataSource: CharactersRemoteDataSource!
+    private var repository: CharacterRepository!
+    private var useCase: FetchAllCharactersUseCase!
 
     override func setUp() {
         super.setUp()
-        mockRepo = TestDIContainer.shared.makeMockCharacterRepository()
-        fetchAllCharactersUseCase = TestDIContainer.shared.makeFetchAllCharactersUseCase(repository: mockRepo)
-        viewModel = TestDIContainer.shared.makeCharacterListViewModel(useCase: fetchAllCharactersUseCase)
-        cancellables = []
+        mockNetworkManager = TestDIContainer.shared.makeMockNetworkManager()
+        dataSource = TestDIContainer.shared.makeDefaultCharacterDataSource(networkManager: mockNetworkManager)
+        repository = TestDIContainer.shared.makeCharacterRepository(dataSource: dataSource)
+        useCase = TestDIContainer.shared.makeFetchAllCharactersUseCase(repo: repository)
+        viewModel = TestDIContainer.shared.makeCharacterListViewModel(usecase: useCase)
     }
     override func tearDown() {
         viewModel = nil
-        mockRepo = nil
-        fetchAllCharactersUseCase = nil
-        cancellables = nil
+        dataSource = nil
+        useCase = nil
+        repository = nil
+        mockNetworkManager = nil
         super.tearDown()
+    }
+
+    func testAPICallFail() {
+        // Arrange
+        let expectedError = URLError(.badServerResponse)
+        mockNetworkManager.fetchCharactersResult = Fail(error: expectedError)
+            .eraseToAnyPublisher()
+        let expectation = self.expectation(description: "API Call Failed")
+
+        // Act
+        viewModel.fetchCharacters(resetPage: true)
+        XCTAssertNotNil(viewModel.error)
+
+        wait(for: [expectation], timeout: 20)
+
+        // Assert
+        // XCTAssertEqual(viewModel.error as? URLError, expectedError)
+
     }
 }
