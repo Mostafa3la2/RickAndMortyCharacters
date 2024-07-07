@@ -32,11 +32,7 @@ struct CharactersNavigationControllerRepresentable: UIViewControllerRepresentabl
     }
     func initializeController() -> UIViewController {
         let charsListVC = CharactersListViewController()
-        let networkManager = DefaultNetworkManager()
-        let remoteDataSource = DefaultCharactersRemoteDataSource(networkManager: networkManager)
-        let charactersRepo = DefaultCharacterRepository(remoteDataSource: remoteDataSource)
-        let fetchAllCharactersUseCase = DefaultFetchAllCharactersUseCase(charactersRepository: charactersRepo)
-        let viewModel = CharactersListViewModel(fetchCharactersUseCase: fetchAllCharactersUseCase)
+        let viewModel = DIContainer.shared.makeCharacterListViewModel()
         let coordinator = CharacterCoordinator(navigationController: navigationController)
         charsListVC.injectData(viewModel: viewModel, coordinator: coordinator)
         return charsListVC
