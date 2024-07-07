@@ -36,19 +36,17 @@ final class CharactersListViewModelTests: XCTestCase {
 
     func testAPICallFail() {
         // Arrange
-        let expectedError = URLError(.badServerResponse)
+        let expectedError = URLError(.networkConnectionLost)
         mockNetworkManager.fetchCharactersResult = Fail(error: expectedError)
             .eraseToAnyPublisher()
-        let expectation = self.expectation(description: "API Call Failed")
-
+        let expectation = expectation(description: "API serivce failure")
         // Act
         viewModel.fetchCharacters(resetPage: true)
-        XCTAssertNotNil(viewModel.error)
-
-        wait(for: [expectation], timeout: 20)
+        expectation.fulfill()
 
         // Assert
-        // XCTAssertEqual(viewModel.error as? URLError, expectedError)
+        XCTAssertEqual(viewModel.error as? URLError, expectedError)
 
+        self.wait(for: [expectation], timeout: 1)
     }
 }
