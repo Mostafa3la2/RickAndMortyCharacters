@@ -9,12 +9,12 @@ import Foundation
 
 // MARK: - Characters Page
 
-struct CharactersPage: Decodable {
+struct CharactersPage {
     let info: Info
-    let results: [Character]
+    let characters: [Character]
 }
 
-struct Info: Decodable {
+struct Info {
     let count: Int
     let pages: Int
     let next: String?
@@ -22,7 +22,7 @@ struct Info: Decodable {
 }
 
 // MARK: - Character
-struct Character: Codable {
+struct Character {
     let id: Int?
     let name, status, species, type, gender, image, url, created: String?
     let origin, location: CharacterLocation?
@@ -30,6 +30,6 @@ struct Character: Codable {
 }
 
 // MARK: - Location
-struct CharacterLocation: Codable {
+struct CharacterLocation {
     let name, url: String?
 }

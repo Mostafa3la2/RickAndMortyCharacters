@@ -44,6 +44,7 @@
 		0DEB9EBC2C3A1D5000C3A629 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 0DEB9EBB2C3A1D5000C3A629 /* SkeletonView */; };
 		0DEB9EBF2C3A22D000C3A629 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EBE2C3A22D000C3A629 /* Colors.swift */; };
 		0DEB9EC12C3A230700C3A629 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EC02C3A230700C3A629 /* DesignSystem.swift */; };
+		0DEB9EC42C3AB68200C3A629 /* CharacterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EC32C3AB68200C3A629 /* CharacterDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		0DEB9EB82C39FA7500C3A629 /* CharacterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCoordinator.swift; sourceTree = "<group>"; };
 		0DEB9EBE2C3A22D000C3A629 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0DEB9EC02C3A230700C3A629 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		0DEB9EC32C3AB68200C3A629 /* CharacterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 		0D80CE202C37446800E2E523 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0DEB9EC22C3AB66A00C3A629 /* DataMapping */,
 				0DEB9E922C38AE9600C3A629 /* DataSources */,
 				0DEB9E8F2C38ADB300C3A629 /* Repositories */,
 			);
@@ -399,6 +402,14 @@
 			path = "Design System";
 			sourceTree = "<group>";
 		};
+		0DEB9EC22C3AB66A00C3A629 /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				0DEB9EC32C3AB68200C3A629 /* CharacterDTO.swift */,
+			);
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -553,6 +564,7 @@
 				0DEB9E8C2C37669F00C3A629 /* FetchAllCharactersUseCase.swift in Sources */,
 				0DEB9E8E2C38AB7700C3A629 /* Character.swift in Sources */,
 				0DEB9EAE2C38E29F00C3A629 /* CharacterListItemViewModel.swift in Sources */,
+				0DEB9EC42C3AB68200C3A629 /* CharacterDTO.swift in Sources */,
 				0D80CE362C374A5700E2E523 /* UIView+Extensions.swift in Sources */,
 				0DEB9E982C38B17100C3A629 /* CharactersRepositoryInterface.swift in Sources */,
 				0DEB9E882C375CBA00C3A629 /* StatusHeaderView.swift in Sources */,

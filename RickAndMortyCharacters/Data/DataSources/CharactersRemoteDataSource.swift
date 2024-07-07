@@ -21,5 +21,9 @@ class DefaultCharactersRemoteDataSource: CharactersRemoteDataSource {
 
     func fetchAllCharacters(withParameters parameters: [String: String]) -> AnyPublisher<CharactersPage, Error> {
         return networkManager.fetchAllCharacters(withParameters: parameters)
+            .map{ characterDTO in
+                characterDTO.toDomain()
+            }
+            .eraseToAnyPublisher()
     }
 }

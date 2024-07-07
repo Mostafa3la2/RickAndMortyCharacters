@@ -64,8 +64,8 @@ class CharactersListViewModel: ObservableObject {
                 }
             } receiveValue: { charactersPage in
                 self.charactersPage = charactersPage
-                self.characters.append(contentsOf: charactersPage.results)
-                self.charactersListItems.append(contentsOf: charactersPage.results.map(CharacterListItemViewModel.init))
+                self.characters.append(contentsOf: charactersPage.characters)
+                self.charactersListItems.append(contentsOf: charactersPage.characters.map(CharacterListItemViewModel.init))
                 self.currentPage += 1
                 self.canLoadMorePages = charactersPage.info.next != nil
             }
