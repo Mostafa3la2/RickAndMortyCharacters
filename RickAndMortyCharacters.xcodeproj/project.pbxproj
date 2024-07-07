@@ -41,6 +41,7 @@
 		0DEB9EB42C39C4FB00C3A629 /* CharacterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EB32C39C4FB00C3A629 /* CharacterDetailsView.swift */; };
 		0DEB9EB62C39F77E00C3A629 /* CharacterDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EB52C39F77E00C3A629 /* CharacterDetailsModel.swift */; };
 		0DEB9EB92C39FA7500C3A629 /* CharacterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EB82C39FA7500C3A629 /* CharacterCoordinator.swift */; };
+		0DEB9EBC2C3A1D5000C3A629 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 0DEB9EBB2C3A1D5000C3A629 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEB9EBC2C3A1D5000C3A629 /* SkeletonView in Frameworks */,
 				0DEB9EB12C39BAA900C3A629 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +403,7 @@
 			name = RickAndMortyCharacters;
 			packageProductDependencies = (
 				0DEB9EB02C39BAA900C3A629 /* Kingfisher */,
+				0DEB9EBB2C3A1D5000C3A629 /* SkeletonView */,
 			);
 			productName = RickAndMortyCharacters;
 			productReference = 0D80CDF02C3741F800E2E523 /* RickAndMortyCharacters.app */;
@@ -476,6 +479,7 @@
 			mainGroup = 0D80CDE72C3741F800E2E523;
 			packageReferences = (
 				0DEB9EAF2C39BAA900C3A629 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				0DEB9EBA2C3A1D5000C3A629 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 0D80CDF12C3741F800E2E523 /* Products */;
 			projectDirPath = "";
@@ -886,6 +890,14 @@
 				minimumVersion = 7.12.0;
 			};
 		};
+		0DEB9EBA2C3A1D5000C3A629 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.31.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -893,6 +905,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0DEB9EAF2C39BAA900C3A629 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		0DEB9EBB2C3A1D5000C3A629 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0DEB9EBA2C3A1D5000C3A629 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
