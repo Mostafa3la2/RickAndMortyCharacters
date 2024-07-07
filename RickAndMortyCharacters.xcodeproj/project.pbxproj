@@ -46,6 +46,9 @@
 		0DEB9EC12C3A230700C3A629 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EC02C3A230700C3A629 /* DesignSystem.swift */; };
 		0DEB9EC42C3AB68200C3A629 /* CharacterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9EC32C3AB68200C3A629 /* CharacterDTO.swift */; };
 		0DEB9ED02C3AC9D100C3A629 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9ECF2C3AC9D100C3A629 /* AppContainer.swift */; };
+		0DEB9ED32C3AD2FF00C3A629 /* UnitTestAppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9ED22C3AD2FF00C3A629 /* UnitTestAppContainer.swift */; };
+		0DEB9ED82C3ADA0000C3A629 /* MockCharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9ED72C3ADA0000C3A629 /* MockCharacterRepository.swift */; };
+		0DEB9EDA2C3ADF7A00C3A629 /* CharactersListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9ED92C3ADF7A00C3A629 /* CharactersListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,9 @@
 		0DEB9EC02C3A230700C3A629 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		0DEB9EC32C3AB68200C3A629 /* CharacterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDTO.swift; sourceTree = "<group>"; };
 		0DEB9ECF2C3AC9D100C3A629 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		0DEB9ED22C3AD2FF00C3A629 /* UnitTestAppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestAppContainer.swift; sourceTree = "<group>"; };
+		0DEB9ED72C3ADA0000C3A629 /* MockCharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterRepository.swift; sourceTree = "<group>"; };
+		0DEB9ED92C3ADF7A00C3A629 /* CharactersListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,9 @@
 		0D80CE032C3741FA00E2E523 /* RickAndMortyCharactersTests */ = {
 			isa = PBXGroup;
 			children = (
+				0DEB9ED42C3AD38100C3A629 /* Mock Repositories */,
+				0DEB9ED12C3AD2E100C3A629 /* Container */,
+				0DEB9ED92C3ADF7A00C3A629 /* CharactersListViewModelTests.swift */,
 				0D80CE042C3741FA00E2E523 /* RickAndMortyCharactersTests.swift */,
 			);
 			path = RickAndMortyCharactersTests;
@@ -413,6 +422,22 @@
 			path = DataMapping;
 			sourceTree = "<group>";
 		};
+		0DEB9ED12C3AD2E100C3A629 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				0DEB9ED22C3AD2FF00C3A629 /* UnitTestAppContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		0DEB9ED42C3AD38100C3A629 /* Mock Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				0DEB9ED72C3ADA0000C3A629 /* MockCharacterRepository.swift */,
+			);
+			path = "Mock Repositories";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -590,7 +615,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEB9EDA2C3ADF7A00C3A629 /* CharactersListViewModelTests.swift in Sources */,
 				0D80CE052C3741FA00E2E523 /* RickAndMortyCharactersTests.swift in Sources */,
+				0DEB9ED82C3ADA0000C3A629 /* MockCharacterRepository.swift in Sources */,
+				0DEB9ED32C3AD2FF00C3A629 /* UnitTestAppContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
