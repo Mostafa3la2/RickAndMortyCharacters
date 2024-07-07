@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import SkeletonView
 
 class CharactersListViewController: UIViewController {
 
@@ -26,6 +27,7 @@ class CharactersListViewController: UIViewController {
         self.title = "Characters"
         setupTableView()
         setupBindings()
+        charactersTableView.showAnimatedSkeleton()
         viewModel?.fetchCharacters(resetPage: true)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +57,7 @@ class CharactersListViewController: UIViewController {
                 if self?.refreshIndicator.isRefreshing == true {
                     self?.refreshIndicator.endRefreshing()
                 }
+                self?.charactersTableView.hideSkeleton()
                 self?.charactersTableView.reloadData()
             }
             .store(in: &cancellables)
@@ -86,12 +89,14 @@ class CharactersListViewController: UIViewController {
     }
 }
 // MARK: - Tableview delegate methods
-extension CharactersListViewController: UITableViewDelegate, UITableViewDataSource {
+extension CharactersListViewController: UITableViewDelegate, SkeletonTableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.characterItems.count ?? 0
     }
-    
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: charactersTableViewCellIdentifier) as? CharacterTableViewCell else {
             return UITableViewCell()
@@ -111,6 +116,9 @@ extension CharactersListViewController: UITableViewDelegate, UITableViewDataSour
         let headerView: StatusHeaderView = StatusHeaderView.fromNib()
         headerView.injectViewModel(viewModel: self.viewModel)
         return headerView
+    }
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return charactersTableViewCellIdentifier
     }
 
     // MARK: Pagination Logic
