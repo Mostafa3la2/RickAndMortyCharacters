@@ -49,4 +49,70 @@ final class CharactersListViewModelTests: XCTestCase {
 
         self.wait(for: [expectation], timeout: 1)
     }
+    func testAPIFetchCharactersSuccessfully() {
+        // Arrange
+        let expectedCharacters = [Character(id: 1,
+                                           name: "Rick",
+                                           status: "alive",
+                                           species: "Human",
+                                           type: "",
+                                           gender: "Male",
+                                           image: "",
+                                           url: "",
+                                           created: "",
+                                           origin: nil,
+                                           location: nil,
+                                           episode: nil),
+                                  Character(id: 2,
+                                            name: "Morty",
+                                            status: "alive",
+                                            species: "Human",
+                                            type: "",
+                                            gender: "Male",
+                                            image: "",
+                                            url: "",
+                                            created: "",
+                                            origin: nil,
+                                            location: nil,
+                                            episode: nil)
+                                    ]
+        let apiCharactersDTO = [CharacterDTO(id: 1,
+                                          name: "Rick",
+                                          status: "alive",
+                                          species: "Human",
+                                          type: "",
+                                          gender: "Male",
+                                          image: "",
+                                          url: "",
+                                          created: "",
+                                          origin: nil,
+                                          location: nil,
+                                          episode: nil),
+                                CharacterDTO(id: 2,
+                                           name: "Morty",
+                                           status: "alive",
+                                           species: "Human",
+                                           type: "",
+                                           gender: "Male",
+                                           image: "",
+                                           url: "",
+                                           created: "",
+                                           origin: nil,
+                                           location: nil,
+                                           episode: nil)
+                                   ]
+        let apiResponseDTO = CharactersPageDTO(info: InfoDTO(count: 4, pages: 4, next: nil, prev: nil), characters: apiCharactersDTO)
+        mockNetworkManager.fetchCharactersResult = Just(apiResponseDTO)
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
+        let expectation = expectation(description: "Characters fetched and mapped successfully")
+        // Act
+        viewModel.fetchCharacters(resetPage: true)
+        expectation.fulfill()
+
+        // Assert
+        XCTAssertEqual(viewModel.charactersListItems.first?.name, expectedCharacters.first?.name)
+
+        self.wait(for: [expectation], timeout: 1)
+    }
 }
