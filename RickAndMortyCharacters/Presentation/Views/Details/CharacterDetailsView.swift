@@ -143,6 +143,7 @@ struct NavigationBackButton: View {
                 .background(Circle().fill(.white))
                 .padding(.top, 40)
                 .padding(.leading, 24)
+                .shadow(radius: 2)
         }
     }
 }
