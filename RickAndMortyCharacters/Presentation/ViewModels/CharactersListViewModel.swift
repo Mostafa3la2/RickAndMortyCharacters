@@ -18,9 +18,9 @@ class CharactersListViewModel: ObservableObject {
     // MARK: - Properties
     private let fetchCharactersUseCase: FetchAllCharactersUseCase
     private var charactersPage: CharactersPage?
-    private var filteredCharacters: [Character] = []
+    private var characters: [Character] = []
 
-    @Published var characterItems: [CharacterListItemViewModel] = []
+    @Published var charactersListItems: [CharacterListItemViewModel] = []
     @Published var error: Error?
     @Published private(set) var loading: Bool = false
     private var currentPage = 1
@@ -38,7 +38,8 @@ class CharactersListViewModel: ObservableObject {
             currentPage = 1
             canLoadMorePages = true
             charactersPage = nil
-            characterItems = []
+            charactersListItems = []
+            characters = []
         }
         guard canLoadMorePages else {
             return
@@ -63,7 +64,8 @@ class CharactersListViewModel: ObservableObject {
                 }
             } receiveValue: { charactersPage in
                 self.charactersPage = charactersPage
-                self.characterItems.append(contentsOf: charactersPage.results.map(CharacterListItemViewModel.init))
+                self.characters.append(contentsOf: charactersPage.results)
+                self.charactersListItems.append(contentsOf: charactersPage.results.map(CharacterListItemViewModel.init))
                 self.currentPage += 1
                 self.canLoadMorePages = charactersPage.info.next != nil
             }
@@ -78,8 +80,8 @@ class CharactersListViewModel: ObservableObject {
     }
 
     func getCharacterDetails(atIndex index: Int) -> CharacterDetailsModel? {
-        if let character = charactersPage?.results[index] {
-            let characterDetails = CharacterDetailsModel(character: character)
+        if index <= characters.count {
+            let characterDetails = CharacterDetailsModel(character: characters[index])
             return characterDetails
         }
         return nil

@@ -27,13 +27,15 @@ class CharactersListViewController: UIViewController {
         self.title = "Characters"
         setupTableView()
         setupBindings()
+        DispatchQueue.main.async {
+            self.charactersTableView.showAnimatedSkeleton()
+        }
         viewModel?.fetchCharacters(resetPage: true)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // ensure navigation bar visibility restoration after being hidden in details page
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        charactersTableView.showAnimatedSkeleton()
     }
     func injectData(viewModel: CharactersListViewModel, coordinator: CharacterCoordinatorProtocol) {
         self.viewModel = viewModel
@@ -51,7 +53,7 @@ class CharactersListViewController: UIViewController {
     }
 
     private func setupBindings() {
-        viewModel?.$characterItems
+        viewModel?.$charactersListItems
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 if self?.refreshIndicator.isRefreshing == true {
@@ -92,7 +94,7 @@ class CharactersListViewController: UIViewController {
 extension CharactersListViewController: UITableViewDelegate, SkeletonTableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.characterItems.count ?? 0
+        return viewModel?.charactersListItems.count ?? 0
     }
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8
@@ -101,7 +103,7 @@ extension CharactersListViewController: UITableViewDelegate, SkeletonTableViewDa
         guard let cell = tableView.dequeueReusableCell(withIdentifier: charactersTableViewCellIdentifier) as? CharacterTableViewCell else {
             return UITableViewCell()
         }
-        if let character = viewModel?.characterItems[indexPath.row] {
+        if let character = viewModel?.charactersListItems[indexPath.row] {
             cell.setCharacterData(character: character)
         }
         return cell
