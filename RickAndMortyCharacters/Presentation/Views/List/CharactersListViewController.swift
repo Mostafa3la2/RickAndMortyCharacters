@@ -27,13 +27,13 @@ class CharactersListViewController: UIViewController {
         self.title = "Characters"
         setupTableView()
         setupBindings()
-        charactersTableView.showAnimatedSkeleton()
         viewModel?.fetchCharacters(resetPage: true)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // ensure navigation bar visibility restoration after being hidden in details page
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        charactersTableView.showAnimatedSkeleton()
     }
     func injectData(viewModel: CharactersListViewModel, coordinator: CharacterCoordinatorProtocol) {
         self.viewModel = viewModel
