@@ -1,5 +1,6 @@
 # Rick and Morty Characters App
-
+[![Swift](https://img.shields.io/badge/Swift-5-orange.svg)](https://swift.org/)
+[![Platform](https://img.shields.io/badge/Platform-iOS%3E=16-blue.svg)](https://developer.apple.com/ios/)
 ## Overview
 
 This iOS application fetches and displays character data from the Rick and Morty API. The app is designed to showcase a clean architecture approach, making the codebase modular, scalable, and testable. Users can browse through a list of characters and view detailed information about each character.
