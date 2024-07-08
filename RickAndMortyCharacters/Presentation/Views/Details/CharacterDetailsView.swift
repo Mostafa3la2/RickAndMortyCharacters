@@ -146,5 +146,7 @@ struct NavigationBackButton: View {
                 .padding(.leading, 24)
                 .shadow(radius: 2)
         }
+        .accessibilityIdentifier("back")
+
     }
 }

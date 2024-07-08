@@ -34,6 +34,7 @@ class StatusHeaderView: UITableViewHeaderFooterView {
         let backgroundView = UIView()
         backgroundView.backgroundColor = .white
         self.backgroundView = backgroundView
+        self.accessibilityIdentifier = "filterHeaderView"
     }
 }
 // MARK: - Collectionview delegate methods
