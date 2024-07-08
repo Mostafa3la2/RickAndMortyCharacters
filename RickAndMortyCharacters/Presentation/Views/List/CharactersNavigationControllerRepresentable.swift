@@ -12,6 +12,7 @@ struct CharactersNavigationControllerRepresentable: UIViewControllerRepresentabl
 
     typealias UIViewControllerType = UINavigationController
     private var navigationController = UINavigationController()
+
     func makeUIViewController(context: Context) -> UINavigationController {
         setupNavigationController()
         return navigationController
@@ -23,6 +24,7 @@ struct CharactersNavigationControllerRepresentable: UIViewControllerRepresentabl
         navigationController.setViewControllers([initializeController()], animated: true)
         setupNavigationControllerAppearance()
     }
+
     private func setupNavigationControllerAppearance() {
         navigationController.navigationBar.prefersLargeTitles = true
         let standardAppearance = UINavigationBarAppearance()
@@ -30,6 +32,7 @@ struct CharactersNavigationControllerRepresentable: UIViewControllerRepresentabl
         standardAppearance.backgroundImage = UIImage()
         navigationController.navigationBar.standardAppearance = standardAppearance
     }
+
     func initializeController() -> UIViewController {
         let charsListVC = CharactersListViewController()
         let viewModel = DIContainer.shared.makeCharacterListViewModel()

@@ -10,6 +10,7 @@ import Combine
 @testable import RickAndMortyCharacters
 
 class MockCharacterRepository: CharacterRepository {
+
     var fetchAllCharactersResult: Result<CharactersPage, Error>?
 
     func getAllCharacters(withParameters parameters: [String : String]) -> AnyPublisher<RickAndMortyCharacters.CharactersPage, Error> {

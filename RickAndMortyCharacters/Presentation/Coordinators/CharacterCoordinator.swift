@@ -12,6 +12,7 @@ protocol CharacterCoordinatorProtocol {
     func showCharacterDetails(characterDetail: CharacterDetailsModel)
 }
 class CharacterCoordinator: CharacterCoordinatorProtocol {
+
     private weak var navigationController: UINavigationController?
 
     init(navigationController: UINavigationController? = nil) {

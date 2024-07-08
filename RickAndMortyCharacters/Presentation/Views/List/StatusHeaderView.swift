@@ -8,22 +8,28 @@
 import UIKit
 
 class StatusHeaderView: UITableViewHeaderFooterView {
+
     // MARK: - IBOutlet
     @IBOutlet weak var statusCollectionView: UICollectionView!
 
     // MARK: - Properties
     private let statusCollectionViewCellIdentifier = "CharacterStatusCollectionViewCell"
     private var viewModel: CharactersListViewModel?
+
+    // MARK: - View Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         setupHeaderView()
         setupCollectionView()
     }
 
+    // MARK: - Dependency Injection
     func injectViewModel(viewModel: CharactersListViewModel?) {
         self.viewModel = viewModel
         self.statusCollectionView.reloadData()
     }
+
+    // MARK: - UI Setup
     private func setupCollectionView() {
         statusCollectionView.delegate = self
         statusCollectionView.dataSource = self

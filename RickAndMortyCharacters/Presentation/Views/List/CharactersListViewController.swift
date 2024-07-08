@@ -22,6 +22,7 @@ class CharactersListViewController: UIViewController {
     private let refreshIndicator = UIRefreshControl()
     private var coordinator: CharacterCoordinatorProtocol?
 
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Characters"
@@ -37,6 +38,7 @@ class CharactersListViewController: UIViewController {
         // ensure navigation bar visibility restoration after being hidden in details page
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    // MARK: - Dependency Injection
     func injectData(viewModel: CharactersListViewModel, coordinator: CharacterCoordinatorProtocol) {
         self.viewModel = viewModel
         self.coordinator = coordinator

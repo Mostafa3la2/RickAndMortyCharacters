@@ -17,6 +17,7 @@ class CharacterStatusCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+    // MARK: - Methods
     func setStatusData(status: CharacterStatus) {
         self.characterStatusLabel.text = status.rawValue
     }

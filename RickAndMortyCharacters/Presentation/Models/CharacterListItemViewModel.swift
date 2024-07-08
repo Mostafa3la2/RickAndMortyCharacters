@@ -8,6 +8,7 @@
 import Foundation
 
 struct CharacterListItemViewModel {
+
     let name, image, species, status: String?
 
     init(character: Character) {

@@ -10,7 +10,10 @@ import Kingfisher
 
 struct CharacterDetailsView: View {
 
+    // MARK: - Properties
     var characterDetails: CharacterDetailsModel
+
+    // MARK: - View
     var body: some View {
             GeometryReader { geometry in
                 ZStack(alignment: .topLeading) {
@@ -22,7 +25,6 @@ struct CharacterDetailsView: View {
                                 Spacer()
                                 CharacterStatusLabel(status: characterDetails.status)
                             }
-
                             HStack {
                                 CharacterSpeciesLabel(species: characterDetails.species)
                                 Text(" • ")
@@ -41,22 +43,32 @@ struct CharacterDetailsView: View {
                 .toolbar(.hidden, for: .navigationBar)
             }
     }
-
 }
 
 #Preview {
-    let characterDetails = CharacterDetailsModel(name: "Test", image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg", species: "Human", gender: "Male", location: "Earth C-137", status: "Alive")
+    let characterDetails = CharacterDetailsModel(
+        name: "Test",
+        image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+        species: "Human",
+        gender: "Male",
+        location: "Earth C-137",
+        status: "Alive")
     return CharacterDetailsView(characterDetails: characterDetails)
 }
 
 struct ImageHeaderView: View {
 
+    // MARK: - Properties
     var geometry: GeometryProxy!
     var imageURL: String?
+
+    // MARK: - Initializer
     init(geometry: GeometryProxy!, image: String?) {
         self.geometry = geometry
         self.imageURL = image
     }
+
+    // MARK: - View
     var body: some View {
         KFImage(URL(string: imageURL ?? ""))
             .resizable()
@@ -69,10 +81,16 @@ struct ImageHeaderView: View {
     }
 }
 struct CharacterNameLabel: View {
+
+    // MARK: - Properties
     var name: String?
+
+    // MARK: - Initializer
     init(name: String?) {
         self.name = name
     }
+
+    // MARK: - View
     var body: some View {
         Text(name ?? "")
             .font(.largeTitle)
@@ -81,10 +99,15 @@ struct CharacterNameLabel: View {
     }
 }
 struct CharacterSpeciesLabel: View {
+
+    // MARK: - Properties
     var species: String?
+
+    // MARK: - Initializer
     init(species: String?) {
         self.species = species
     }
+    // MARK: - View
     var body: some View {
         Text(species ?? "")
             .font(.title3)
@@ -92,10 +115,16 @@ struct CharacterSpeciesLabel: View {
     }
 }
 struct CharacterStatusLabel: View {
+
+    // MARK: - Properties
     var status: String?
+
+    // MARK: - Initializer
     init(status: String?) {
         self.status = status
     }
+
+    // MARK: - View
     var body: some View {
         Text(status ?? "")
             .padding(.all, 8)
@@ -104,10 +133,16 @@ struct CharacterStatusLabel: View {
     }
 }
 struct CharacterGenderLabel: View {
+
+    // MARK: - Properties
     var gender: String?
+
+    // MARK: - Initializer
     init(gender: String?) {
         self.gender = gender
     }
+
+    // MARK: - View
     var body: some View {
         Text(gender ?? "")
             .font(.title3)
@@ -115,10 +150,16 @@ struct CharacterGenderLabel: View {
     }
 }
 struct CharacterLocationLabel: View {
+
+    // MARK: - Properties
     var location: String?
+
+    // MARK: - Initializer
     init(location: String?) {
         self.location = location
     }
+
+    // MARK: - View
     var body: some View {
         HStack {
             Text("Location: ")
@@ -132,8 +173,11 @@ struct CharacterLocationLabel: View {
     }
 }
 struct NavigationBackButton: View {
+
+    // MARK: - Properties
     @Environment(\.presentationMode) var presentationMode
 
+    // MARK: - View
     var body: some View {
         Button(action: {
             presentationMode.wrappedValue.dismiss()
@@ -147,6 +191,5 @@ struct NavigationBackButton: View {
                 .shadow(radius: 2)
         }
         .accessibilityIdentifier("back")
-
     }
 }

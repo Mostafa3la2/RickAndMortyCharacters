@@ -16,7 +16,6 @@ final class DefaultFetchAllCharactersUseCase: FetchAllCharactersUseCase {
 
     private let charactersRepository: CharacterRepository
 
-
     init(charactersRepository: CharacterRepository) {
         self.charactersRepository = charactersRepository
     }

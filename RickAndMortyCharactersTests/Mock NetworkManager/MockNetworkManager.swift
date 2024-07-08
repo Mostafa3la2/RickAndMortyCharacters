@@ -10,6 +10,7 @@ import Combine
 @testable import RickAndMortyCharacters
 
 class MockNetworkManager: NetworkManager {
+
     var fetchCharactersResult: AnyPublisher<(data: CharactersPageDTO, response: URLResponse), Error>?
 
     func fetchAllCharacters(withParameters parameters: [String: String]) -> AnyPublisher<(data: CharactersPageDTO, response: URLResponse), Error> {

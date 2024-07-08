@@ -13,11 +13,24 @@ enum MessageType {
     case error
 }
 struct PopupMessageView: View {
+
+    // MARK: - Properties
     @State private var isVisible: Bool = true
     let message: String
     var displayDuration: TimeInterval = 5
     var messageType: MessageType = .error
+    private var createColor: Color {
+        switch messageType {
+        case .warning:
+            return Color(DesignSystem.Colors.CoolOrange.Color)
+        case .success:
+            return Color(DesignSystem.Colors.CoolGreen.Color)
+        case .error:
+            return Color(DesignSystem.Colors.SoftRed.Color)
+        }
+    }
 
+    // MARK: - View
     var body: some View {
         if isVisible {
             Text(message)
@@ -36,16 +49,7 @@ struct PopupMessageView: View {
                 }
         }
     }
-    private var createColor: Color {
-        switch messageType {
-        case .warning:
-            return Color(DesignSystem.Colors.CoolOrange.Color)
-        case .success:
-            return Color(DesignSystem.Colors.CoolGreen.Color)
-        case .error:
-            return Color(DesignSystem.Colors.SoftRed.Color)
-        }
-    }
+
 }
 
 #Preview {

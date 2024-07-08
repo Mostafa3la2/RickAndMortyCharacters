@@ -7,6 +7,7 @@
 
 import Foundation
 struct CharacterDetailsModel {
+
     let name, image, species, gender, location, status: String?
 
     init(character: Character) {
