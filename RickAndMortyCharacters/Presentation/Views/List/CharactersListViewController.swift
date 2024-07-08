@@ -70,7 +70,7 @@ class CharactersListViewController: UIViewController {
                 if let error = error {
                     // Handle error (e.g., show an alert)
                     // TODO: show SwiftUI Alert ?
-                    print("Error: \(error.localizedDescription)")
+                    PopupMessagePresenter.presentPopupMessage(from: self, message: error.localizedDescription, type: .error)
                 }
             }
             .store(in: &cancellables)

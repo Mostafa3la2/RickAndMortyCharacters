@@ -20,6 +20,8 @@
 		0D80CE332C3748B100E2E523 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D80CE312C3748B100E2E523 /* CharacterTableViewCell.xib */; };
 		0D80CE362C374A5700E2E523 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CE352C374A5700E2E523 /* UIView+Extensions.swift */; };
 		0D80CE382C374BC900E2E523 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80CE372C374BC900E2E523 /* UITableView+Extensions.swift */; };
+		0D9AF0532C3B83F2002BE3DF /* PopupMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9AF0522C3B83F2002BE3DF /* PopupMessageView.swift */; };
+		0D9AF0552C3B860A002BE3DF /* PopupMessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9AF0542C3B860A002BE3DF /* PopupMessagePresenter.swift */; };
 		0DEB9E802C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9E7F2C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift */; };
 		0DEB9E832C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB9E812C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift */; };
 		0DEB9E842C37587B00C3A629 /* CharacterStatusCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB9E822C37587B00C3A629 /* CharacterStatusCollectionViewCell.xib */; };
@@ -86,6 +88,8 @@
 		0D80CE312C3748B100E2E523 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 		0D80CE352C374A5700E2E523 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		0D80CE372C374BC900E2E523 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		0D9AF0522C3B83F2002BE3DF /* PopupMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMessageView.swift; sourceTree = "<group>"; };
+		0D9AF0542C3B860A002BE3DF /* PopupMessagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMessagePresenter.swift; sourceTree = "<group>"; };
 		0DEB9E7F2C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersNavigationControllerRepresentable.swift; sourceTree = "<group>"; };
 		0DEB9E812C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatusCollectionViewCell.swift; sourceTree = "<group>"; };
 		0DEB9E822C37587B00C3A629 /* CharacterStatusCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterStatusCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 		0D80CE222C3744C900E2E523 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0D9AF0512C3B83DD002BE3DF /* Views */,
 				0DEB9EBD2C3A22C200C3A629 /* Design System */,
 				0DEB9EA02C38CF4300C3A629 /* Network */,
 			);
@@ -338,6 +343,23 @@
 				0DEB9E852C375A1200C3A629 /* UICollectionView+Extensions.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D9AF0512C3B83DD002BE3DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0D9AF0562C3B860D002BE3DF /* PopupMessage */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0D9AF0562C3B860D002BE3DF /* PopupMessage */ = {
+			isa = PBXGroup;
+			children = (
+				0D9AF0522C3B83F2002BE3DF /* PopupMessageView.swift */,
+				0D9AF0542C3B860A002BE3DF /* PopupMessagePresenter.swift */,
+			);
+			path = PopupMessage;
 			sourceTree = "<group>";
 		};
 		0DEB9E8F2C38ADB300C3A629 /* Repositories */ = {
@@ -618,7 +640,9 @@
 				0D80CE322C3748B100E2E523 /* CharacterTableViewCell.swift in Sources */,
 				0DEB9E832C37587B00C3A629 /* CharacterStatusCollectionViewCell.swift in Sources */,
 				0DEB9E942C38AEBF00C3A629 /* CharactersRemoteDataSource.swift in Sources */,
+				0D9AF0532C3B83F2002BE3DF /* PopupMessageView.swift in Sources */,
 				0DEB9E802C374EF700C3A629 /* CharactersNavigationControllerRepresentable.swift in Sources */,
+				0D9AF0552C3B860A002BE3DF /* PopupMessagePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

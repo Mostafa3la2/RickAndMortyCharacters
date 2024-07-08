@@ -28,5 +28,8 @@ extension DesignSystem {
         case MediumGray
         case LightBlue
         case PeachPink
+        case CoolGreen
+        case CoolOrange
+        case SoftRed
     }
 }
