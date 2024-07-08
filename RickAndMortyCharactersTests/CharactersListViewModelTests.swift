@@ -203,7 +203,7 @@ final class CharactersListViewModelTests: XCTestCase {
         let expectation = expectation(description: "Fetching paginated characters succeeds")
         mockRepo.fetchAllCharactersResult = .success(firstPage)
         viewModel.$charactersListItems
-            .dropFirst(2) // Dropping the initial empty array and the first page
+            .dropFirst(2) // Dropping the initial empty array and the reset page logic
             .sink{ characters in
                 if characters.count == firstPageCharacters.count {
                     XCTAssertEqual(characters.count, firstPageCharacters.count)
