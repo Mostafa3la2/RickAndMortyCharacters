@@ -26,6 +26,7 @@ Clean Architecture was chosen to ensure that the app is modular, testable, and m
 ## Assumptions
 
 - Characters are colored in homepage based on their status as following: blue for alive, peach for dead, white for unknown
+- filteration happens at API level not on the current character list
 - Used Xib files for UIKit instead of designing by code as there are already some SwiftUI views writted by code to showcase diversity in creating UI
 - Details don't need to be refetched from remote source as the model itself in homepage has the full details and doesn't have a simplified version
 - Used the default urlsession because we don't need any additional customization as no features like SSL pinning are implemented.
