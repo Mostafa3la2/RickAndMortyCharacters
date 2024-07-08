@@ -109,8 +109,8 @@ final class CharactersListViewModelTests: XCTestCase {
                                    ]
         let apiResponseDTO = CharactersPageDTO(info: InfoDTO(count: 4, pages: 4, next: nil, prev: nil), characters: apiCharactersDTO)
         mockNetworkManager.fetchCharactersResult = Just((apiResponseDTO, URLResponse()))
-            .setFailureType(to: Error.self)
-            .eraseToAnyPublisher()
+                                                    .setFailureType(to: Error.self)
+                                                    .eraseToAnyPublisher()
         let expectation = expectation(description: "Characters fetched and mapped successfully")
         // Act
         viewModel.fetchCharacters(resetPage: true)
@@ -142,5 +142,87 @@ final class CharactersListViewModelTests: XCTestCase {
             .store(in: &cancellables)
 
         wait(for: [expectation], timeout: 10)
+    }
+    func testPagination() {
+        let mockRepo = MockCharacterRepository()
+        useCase = DefaultFetchAllCharactersUseCase(charactersRepository: mockRepo)
+        viewModel = CharactersListViewModel(fetchCharactersUseCase: useCase)
+        let firstPageCharacters = [Character(id: 1,
+                                          name: "Rick",
+                                          status: "alive",
+                                          species: "Human",
+                                          type: "",
+                                          gender: "Male",
+                                          image: "",
+                                          url: "",
+                                          created: "",
+                                          origin: nil,
+                                          location: nil,
+                                          episode: nil),
+                                Character(id: 2,
+                                           name: "Morty",
+                                           status: "alive",
+                                           species: "Human",
+                                           type: "",
+                                           gender: "Male",
+                                           image: "",
+                                           url: "",
+                                           created: "",
+                                           origin: nil,
+                                           location: nil,
+                                           episode: nil)
+                                   ]
+        let secondPageCharacters = [Character(id: 3,
+                                          name: "Beth",
+                                          status: "alive",
+                                          species: "Human",
+                                          type: "",
+                                          gender: "Female",
+                                          image: "",
+                                          url: "",
+                                          created: "",
+                                          origin: nil,
+                                          location: nil,
+                                           episode: nil),
+                                Character(id: 4,
+                                           name: "Jerry",
+                                           status: "alive",
+                                           species: "Human",
+                                           type: "",
+                                           gender: "Male",
+                                           image: "",
+                                           url: "",
+                                           created: "",
+                                           origin: nil,
+                                           location: nil,
+                                           episode: nil)
+                                   ]
+        let firstPage = CharactersPage(info: Info(count: 2, pages: 5, next: "nextPage", prev: nil), characters: firstPageCharacters)
+        let secondPage = CharactersPage(info: Info(count: 2, pages: 5, next: nil, prev: "prevPage"), characters: secondPageCharacters)
+
+        let expectation = expectation(description: "Fetching paginated characters succeeds")
+        mockRepo.fetchAllCharactersResult = .success(firstPage)
+        viewModel.$charactersListItems
+            .dropFirst(2) // Dropping the initial empty array and the first page
+            .sink{ characters in
+                if characters.count == firstPageCharacters.count {
+                    XCTAssertEqual(characters.count, firstPageCharacters.count)
+                    XCTAssertEqual(characters.first?.name, firstPageCharacters.first?.name)
+                    XCTAssertEqual(characters.last?.name, firstPageCharacters.last?.name)
+                } else if characters.count == firstPageCharacters.count + secondPageCharacters.count {
+                    XCTAssertEqual(characters.count, firstPageCharacters.count + secondPageCharacters.count)
+                    XCTAssertEqual(characters.first?.name, firstPageCharacters.first?.name)
+                    XCTAssertEqual(characters.last?.name, secondPageCharacters.last?.name)
+                    expectation.fulfill()
+                } else {
+                    XCTFail("unexpected number of characters: \(characters.count)")
+                }
+            }
+            .store(in: &cancellables)
+
+        viewModel.fetchCharacters(resetPage: true)
+        mockRepo.fetchAllCharactersResult = .success(secondPage)
+        self.viewModel.fetchNextPage()
+        wait(for: [expectation], timeout: 2.0)
     }
 }
