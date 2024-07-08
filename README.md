@@ -12,7 +12,8 @@ This iOS application fetches and displays character data from the Rick and Morty
 - **Combine**: Used for handling asynchronous events and data binding.
 - **Clean Architecture**: Implements the clean architecture principles to maintain a clear separation of concerns.
 - **Dependency Injection**: Used for managing dependencies and enhancing testability.
-
+- **Kingfisher**: Used for image caching.
+- **SkeletonView** Add more user-friendly loading style in poor connection situations
 
 ## Why Clean Architecture
 
@@ -28,29 +29,38 @@ Clean Architecture was chosen to ensure that the app is modular, testable, and m
 - Used Xib files for UIKit instead of designing by code as there are already some SwiftUI views writted by code to showcase diversity in creating UI
 - Details don't need to be refetched from remote source as the model itself in homepage has the full details and doesn't have a simplified version
 - Used the default urlsession because we don't need any additional customization as no features like SSL pinning are implemented.
-- Added extra shadow for the back button in details page to increase visibility
+- Minor UI enhancements like adding shadow to back button in details page to increase visibility and adding pull to refresh logic
 
 ## Challenges Faced
 
-- Placeholder for challenges encountered while implementing the clean architecture.
-- Placeholder for challenges with network handling and API integration.
-- Placeholder for any UI/UX challenges.
+- Separation of concers while designing with clean architecture i.e. having multiple mappers between models
+- Choosing what to make mockable and testable
+- Dependency Injection Container logic, coordinator logic.
+- Pagination Unit testing.
+
+## Possible Enhancements
+
+- Enhance network layer to have logging and better error handling
+- Adding system for handling accessbility identifier and adding more UI Tests
 
 ## Screenshots
+![Simulator Screenshot - iPhone 15 Pro - 2024-07-08 at 05 33 19](https://github.com/Mostafa3la2/RickAndMortyCharacters/assets/9192592/136965be-6e90-4136-a2ee-746de78e354d)
+![Simulator Screenshot - iPhone 15 Pro - 2024-07-08 at 05 33 24](https://github.com/Mostafa3la2/RickAndMortyCharacters/assets/9192592/86c639b0-263a-4e1f-b9a8-b43167e71e61)
+![Simulator Screenshot - iPhone 15 Pro - 2024-07-08 at 05 33 28](https://github.com/Mostafa3la2/RickAndMortyCharacters/assets/9192592/c829969b-a5be-4bba-949b-6b470c2d4c7d)
+![Simulator Screenshot - iPhone 15 Pro - 2024-07-08 at 05 33 05](https://github.com/Mostafa3la2/RickAndMortyCharacters/assets/9192592/74a25e30-62b0-4794-aba6-bb83a23b27b2)
+<img width="349" alt="Screenshot 2024-07-08 at 05 34 15" src="https://github.com/Mostafa3la2/RickAndMortyCharacters/assets/9192592/2a4236eb-1301-4303-8c51-d61a3d564050">
 
-![Screenshot 1](path/to/screenshot1.png)
-![Screenshot 2](path/to/screenshot2.png)
-![Screenshot 3](path/to/screenshot3.png)
+
 
 ## Getting Started
 
 ### Prerequisites
 
-- Xcode 12.0 or later
-- iOS 13.0 or later
+- Xcode 15.0 or later
+- iOS 16.0 or later
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/rick-and-morty-characters-app.git
+   git clone https://github.com/Mostafa3la2/RickAndMortyCharacters.git
